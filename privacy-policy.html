@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Aquilus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      /* Light theme colors matching your app */
+      --text: #2C3E50;
+      --text-secondary: #5D6D7E;
+      --accent: #75B6F7;
+      --accent-secondary: #8BEAF8;
+      --background: #FFFFFF;
+      --container: #FFFFFF;
+      --container-shadow: rgba(44, 62, 80, 0.15);
+      --card-bg: #F5F6F7;
+      --border: #E8ECEF;
+      --subtle: #333333ff;
+      
+      /* Gradient backgrounds */
+      --bg-gradient: linear-gradient(135deg, #265D74 0%, #3197a7 100%);
+      --accent-gradient: linear-gradient(135deg, #75B6F7 0%, #8BEAF8 100%);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        /* Dark theme colors matching your app */
+        --text: #FFFFFF;
+        --text-secondary: #8BEAF8;
+        --accent: #8BEAF8;
+        --accent-secondary: #75B6F7;
+        --background: #265D74;
+        --container: #265D74;
+        --container-shadow: rgba(0, 0, 0, 0.4);
+        --card-bg: #142c3d;
+        --border: #3A4A5A;
+        --subtle: rgba(255,255,255,0.6);
+        
+        --bg-gradient: linear-gradient(135deg, #1A2A3A 0%, #265D74 100%);
+        --accent-gradient: linear-gradient(135deg, #8BEAF8 0%, #75B6F7 100%);
+      }
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      color: var(--text);
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--container);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 
+        0 32px 64px var(--container-shadow),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--accent-gradient);
+      border-radius: 16px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        0 8px 32px rgba(117, 182, 247, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .app-icon::before {
+      content: '';
+      width: 28px;
+      height: 28px;
+      background: white;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .app-icon::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transform: rotate(45deg);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    h1 {
+      color: var(--text);
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    
+    .last-updated {
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      background: var(--card-bg);
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    
+    .content {
+      line-height: 1.7;
+    }
+    
+    .section {
+      margin-bottom: 40px;
+    }
+    
+    .section:last-child {
+      margin-bottom: 0;
+    }
+    
+    h2 {
+      color: var(--text);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: -0.25px;
+      display: flex;
+      align-items: center;
+    }
+    
+    h2::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--accent-gradient);
+      border-radius: 2px;
+      margin-right: 12px;
+    }
+    
+    p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    
+    ul {
+      margin: 16px 0 16px 20px;
+    }
+    
+    li {
+      color: var(--text-secondary);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    
+    li::marker {
+      color: var(--accent);
+    }
+    
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    
+    .highlight-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 24px 0;
+      border-left: 4px solid var(--accent);
+      position: relative;
+    }
+    
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      opacity: 0.03;
+      border-radius: 16px;
+    }
+    
+    .contact-section {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 48px;
+      border: 1px solid var(--border);
+    }
+    
+    .contact-title {
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    
+    .contact-email {
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 24px;
+      background: rgba(117, 182, 247, 0.1);
+      border-radius: 12px;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+    
+    .contact-email:hover {
+      background: rgba(117, 182, 247, 0.15);
+      transform: translateY(-1px);
+    }
+    
+    .data-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    
+    .data-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    
+    .data-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(117, 182, 247, 0.1);
+    }
+    
+    .data-card-title {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .data-card-description {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 16px;
+      }
+      
+      .container {
+        padding: 32px 24px;
+        border-radius: 20px;
+      }
+      
+      h1 {
+        font-size: 28px;
+      }
+      
+      h2 {
+        font-size: 20px;
+      }
+      
+      .data-types {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 24px 20px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .contact-section {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="app-icon"></div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Your privacy and data security are our top priorities</p>
+      <div class="last-updated">Last updated: September 25, 2025</div>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <h2>Access</h2>
+        <div class="highlight-card">
+          <p><strong>Restricted Access:</strong> This application is designed exclusively for authorized users. Unauthorized access is strictly prohibited and monitored for security purposes.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Data Collection and Storage</h2>
+        <p>We collect and store the following information to provide you with the best possible experience:</p>
+        
+        <div class="data-types">
+          <div class="data-card">
+            <div class="data-card-title">Camera Data</div>
+            <div class="data-card-description">Photos and videos captured through the app for workout analysis and documentation</div>
+          </div>
+          <div class="data-card">
+            <div class="data-card-title">Device Information</div>
+            <div class="data-card-description">Device model and operating system version for compatibility and optimization</div>
+          </div>
+          <div class="data-card">
+            <div class="data-card-title">Usage Data</div>
+            <div class="data-card-description">App usage statistics and performance metrics to improve functionality</div>
+          </div>
+          <div class="data-card">
+            <div class="data-card-title">Account Information</div>
+            <div class="data-card-description">User credentials and profile information for authorized access and personalization</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>How We Use Your Data</h2>
+        <p>Your data enables us to deliver exceptional service through:</p>
+        <ul>
+          <li><strong>Core Functionality:</strong> Providing essential app features and swimming workout management</li>
+          <li><strong>Performance Enhancement:</strong> Improving app performance and optimizing user experience</li>
+          <li><strong>Security Assurance:</strong> Ensuring secure access and protecting your account</li>
+          <li><strong>Development:</strong> Internal testing and feature development to serve you better</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Data Security</h2>
+        <div class="highlight-card">
+          <p>We implement enterprise-grade security measures including encryption, secure authentication, and regular security audits to protect your data against unauthorized access, alteration, disclosure, or destruction.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Data Sharing</h2>
+        <p><strong>Your Privacy is Paramount:</strong> We do not sell, trade, or share your personal data with third parties. Limited sharing may occur only when:</p>
+        <ul>
+          <li>Necessary to provide core app services</li>
+          <li>Required by applicable laws or legal processes</li>
+          <li>Essential for security and fraud prevention</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Data Retention</h2>
+        <p>We retain your data only as long as necessary for the purposes outlined in this policy, to provide ongoing services, or as required by applicable laws and regulations.</p>
+      </div>
+
+      <div class="section">
+        <h2>Your Rights</h2>
+        <p>You maintain full control over your personal data. You may request:</p>
+        <ul>
+          <li><strong>Access:</strong> View what personal data we have about you</li>
+          <li><strong>Correction:</strong> Update or correct your personal information</li>
+          <li><strong>Deletion:</strong> Remove your personal data from our systems</li>
+          <li><strong>Portability:</strong> Export your data in a standard format</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <div class="contact-title">Questions About Privacy?</div>
+      <p style="margin-bottom: 20px;">We're here to help. Contact our privacy team for any questions or concerns.</p>
+      <a href="mailto:cj.baker@lablytics.com" class="contact-email">cj.baker@lablytics.com</a>
+    </div>
+  </div>
+</body>
+</html>
